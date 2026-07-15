@@ -31,3 +31,6 @@ scikit-learn
 
 # Transformers
 sentence-transformers
+
+# UI
+streamlit
