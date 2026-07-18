@@ -13,7 +13,7 @@ st.caption("This chatbot is powered by LLaMA 3.3 70B Versatile model from Groq. 
 #create a session state to store the chat history
 
 if "chat_history" not in st.session_state:
-    st.session_state.chat_history = []
+    st.session_state.chat_history = [SystemMessage(content="You are a helpful assistant. Always answer in a 4-5 sentence format. If you don't know the answer, say 'I don't know'.")]
     
 # Display the previous chat messages
 
