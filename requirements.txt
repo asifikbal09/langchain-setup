@@ -34,3 +34,6 @@ sentence-transformers
 
 # UI
 streamlit
+
+# Other
+typeddict
