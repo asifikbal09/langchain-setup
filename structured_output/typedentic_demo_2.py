@@ -1,6 +1,6 @@
 from langchain_groq import ChatGroq
 from dotenv import load_dotenv
-from typing import TypedDict
+from typing import TypedDict, Annotated, Literal, Optional
 
 load_dotenv()
 
@@ -11,7 +11,13 @@ model = ChatGroq(
 # Define the schema
 
 class ResumeAnalysis(TypedDict):
-    candidate_name: str
+    candidate_name: Annotated[str, "The full name of the candidate"]
+    key_skills: Annotated[list[str], "Extract a list of key skills the candidate possesses"]
+    summary: Annotated[str, "Provide a brief summary of the candidate's experience and background"]
+    experience_level: Annotated[Literal["entry_level", "mid_level", "senior_level"], "Determine the experience level of the candidate based on their background and skills"]
+    strengths: Annotated[Optional[list[str]], "Identify the candidate's strengths based on their experience and skills"]
+    weaknesses: Annotated[Optional[list[str]], "Identify the candidate's weaknesses or areas for improvement based on their experience and skills"]
+    
     
 # create structured output using the schema
 
