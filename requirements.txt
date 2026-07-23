@@ -36,4 +36,4 @@ sentence-transformers
 streamlit
 
 # Other
-typeddict
+pydantic
